@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 30px 10%;
+        }
+
+        h2 {
+            color: red;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: black;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .biodata-info,
+        .hobbies {
+            background: Pink;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .biodata-info:hover,
+        .hobbies:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .biodata-info p,
+        .hobbies ul {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .biodata-info strong {
+            color: black;
+        }
+
+        .hobbies ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hobbies li {
+            background: linear-gradient(135deg, #0056b3, #0073e6);
+            color: white;
+            margin: 10px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(135deg, black,white);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-gallery video {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .image-gallery video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        marquee {
+            font-size: 1.2em;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            animation: fadeInDown 1s;
+        }
+
+        audio {
+            width: 40%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Dropdown Menu */
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .dropdown {
+            position: relative;
+            margin-left: 0;
+        }
+
+        .menu-button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .menu-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            text-decoration: none;
+            color: #0073e6;
+            padding: 10px 15px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+   <header style="background: url('images/langit.jpeg') no-repeat center center/cover; height: 40vh;">
+    <div class="header-content">
+        <h1> A PIECES ABOUT DANIAL </h1>
+    </div>
+</header>
+
+    <nav>
+        <div class="dropdown">
+            <button class="menu-button">☰ Menu</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="biodata.html">Biodata</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            It is all about me, myself, and I! 
+        </marquee>
+
+        <h2>Personal Information</h2>
+        <div class="biodata-info">
+            <p><strong>Name:</strong> Muhammad Akhmal Danial Bin Mohd Shaifuddin</p>
+            <p><strong>Nickname:</strong> Denn, Danial</p>
+            <p><strong>Date of Birth:</strong> 11 May 2004</p>
+            <p><strong>Email:</strong> <a href="mailto:ggdnelo@gmail.com">ggdnelo@gmail.com</a></p>
+            <p><strong>Phone Number:</strong> 011-24049126</p>
+        </div>
+
+        <h2>MySelf</h2>
+        <div class="image-gallery">
+            <img src="images/denn7.jpg" alt="Gallery Image 1">
+            <img src="images/denn1.jpg" alt="Gallery Image 2">
+            <video src="video/introdenn.MOV" controls></video>
+            <img src="images/denn5.jpg" alt="Gallery Image 3">
+            <img src="images/denn8.jpg" alt="Gallery Image 4">
+            <img src="images/denn9.jpg" alt="Gallery Image 5">
+        </div>
+
+        <h2>Hobbies</h2>
+        <div class="hobbies">
+            <ul>
+                <li>Playing Football</li>
+                <li>Riding</li>
+                <li>Running</li>
+                <li>Fishing</li>
+                <li>Music</li>
+                <li>Movie time</li>
+                <li>Spend Time With Buddies</li>
+                <li>Gym</li>
+            </ul>
+        </div>
+
+        <h2>Ambition</h2>
+        <div class="biodata-info">
+            <p><strong>Ambition:</strong> "My ambition is to become a dedicated and honorable member of the army, following in the footsteps of my father, who served with pride and loyalty. Inspired by his unwavering commitment to the nation, I aspire to protect and defend my country with courage, discipline, and integrity. Joining the army represents not just a career, but a noble calling to serve, safeguard the nation's peace, and contribute to its stability. I am determined to honor my father’s legacy by upholding the values of perseverance, resilience, and selflessness in every aspect of my service." ;)</p>
+        </div>
+
+        <h2>Skills & Interests</h2>
+        <div class="biodata-info">
+            <p><strong>Communication Skills:</strong> Im is easy person to deal with and it was very easy to communicate with me</p>
+            <p><strong>Soft Skills:</strong> I had a good critical thinking , Problem-Solving, Teamwork, Time Management, Creative Ideas also Im good in sport and singing</p>
+        </div>
+    </main>
+    <audio autoplay controls>
+        <source src="audio/bilakusudahtiada.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <footer>
+      <p>&copy; 2024 Akhmal Danial | <a href="index.html">Home</a> | <a href="contact.html">Contact Me</a></p>
+
+
+    </footer>
+</body>
+</html>
+

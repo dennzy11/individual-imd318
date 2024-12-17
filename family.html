@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 30px 10%;
+        }
+
+        h2 {
+            color: red;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: black;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .family-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .family-section {
+            background: grey;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .family-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .family-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .family-section h3 {
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .family-section p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: linear-gradient(135deg, black, white);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        marquee {
+            font-size: 1.2em;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px;
+            background: #f9f9ff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            animation: fadeInDown 1s;
+        }
+
+        audio {
+            width: 40%;
+            display: block;
+            margin: 0 auto;
+         }
+
+        /* Dropdown Menu */
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .dropdown {
+            position: relative;
+            margin-left: 0;
+        }
+
+        .menu-button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .menu-button:hover {
+            background-color:black;
+            transform: scale(1.1);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            text-decoration: none;
+            color: #0073e6;
+            padding: 10px 15px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        }
+    </style>
+</head>
+<body>
+   <header style="background: url('images/familybg.jpeg') no-repeat center center/cover; height: 35vh;">
+    <div class="header-content">
+        <h1> "Unbreakable Bonds: The Foundation of My Family" </h1>
+    </div>
+</header>
+     <nav>
+        <div class="dropdown">
+            <button class="menu-button">☰ Menu</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="biodata.html">Biodata</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            My precious people of all time!
+        </marquee>
+        
+        <h2>Family Members</h2>
+        <div class="family-grid">
+            <div class="family-section">
+        <img src="images/dad.jpeg" alt="Dad">
+                <h3>Ahmad Fauzi bin Rosli</h3>
+                <p><strong>Name :</strong> Ahmad Fauzi bin Rosli</p>
+                <p><strong>Profession :</strong> Prison Warden</p>
+               <p><strong>Hobbies :</strong> Fishing and Riding</p>
+
+                <p><strong>Notable Information :</strong> Hardworking Person.</p>
+            </div>
+            <div class="family-section">
+                <img src="images/mak.jpg" alt="Mom">
+                <h3>Husairoh binti Hashim</h3>
+                <p><strong>Name :</strong> Husairoh binti Hashim</p>
+                <p><strong>Profession :</strong> Housewife, Nurse at Hospital Taiping</p>
+                <p><strong>Hobbies :</strong> Reading, gardening, cooking, taking a walk outside</p>
+                <p><strong>Notable Information :</strong> She has an amazing ability to manage multiple responsibilities
+                since, and she always makes me sleep without an empty stomach, provides everything for my studies, no matter how busy she gets. She's everything, my world, she's my soul, she's strong and she's taught me how to be a strong person. I LOVE HER SO MUCH!</p>
+            </div>
+            <div class="family-section">
+                <img src="images/ajim.jpeg" alt="Danial Azim">
+                <h3>Danial Azim</h3>
+                <p>First sibling</p>
+                <p><strong>Profession :</strong> Technician</p>
+                <p><strong>Hobbies :</strong> Travelling, playing guitar</p>
+            </div>
+            <div class="family-section">
+                <img src="images/denn3.jpg" alt="Akhmal Danial">
+                <h3>Akhmal Danial</h3>
+                <p>It's me!, the most handsome person in my family</p>
+                <p><strong>Current status :</strong> Still a student</p>
+                <p><strong>Hobbies :</strong> Food hunting, watching movies</p>
+            </div>
+            <div class="family-section">
+                <img src="images/afrina.jpg" alt="Afrina Farzana">
+                <h3>Afrina Farzana</h3>
+                <p>My first younger sister and the quietest person in my family</p>
+                <p><strong>Current status :</strong> Still in primary school</p>
+                <p><strong>Hobbies :</strong> Playing Netball, Watching K-drama, Cooking</p>
+            </div>
+            <div class="family-section">
+                <img src="images/auni.jpg" alt="Auni Humairah">
+                <h3>Auni Humairah</h3>
+                <p>Last sibling and always crying</p>
+                <p><strong>Current status :</strong> Still in primary school</p>
+                <p><strong>Hobbies :</strong> Drawing, Reading</p>
+            </div>
+        </div>
+    </main>
+    <audio autoplay controls>
+        <source src="audio/rahsiatuhan.mp3" type="audio/mpeg">
+    </audio>
+    <footer>
+        <p>&copy; 2024 Akhmal Danial | <a href="index.html">Home</a> | <a href="contact.html">Contact Me</a></p>
+    </footer>
+</body>
+</html>
+

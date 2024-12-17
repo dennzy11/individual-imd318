@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 30px 10%;
+
+        }
+
+        h2 {
+            color: red;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: black;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .about-project {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center;
+        }
+
+        .about-project img {
+            max-width: 30%; /* Smaller image size */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 20px; /* Space between image and caption */
+        }
+
+        .about-project .image-caption {
+            flex: 1; /* Allow the caption to take up remaining space */
+            font-size: 1.0em; /* Bigger text */
+            font-weight: bolt;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: #f9f9ff; /* Add a background frame */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center-align text in frame */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .about-project .image-caption:hover {
+            transform: scale(1.1);
+            color: green;
+        }
+
+        footer {
+            background: linear-gradient(135deg,black, white);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        marquee {
+            font-size: 2.5em;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            background: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            animation: fadeInDown 1s;
+        }
+
+        audio {
+            display: none;
+        }
+
+        /* Dropdown Menu */
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .dropdown {
+            position: relative;
+            margin-left: 0; /* Align to the left */
+        }
+
+        /* Interesting Menu Button */
+        .menu-button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .menu-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0; /* Align dropdown to the left of the button */
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            text-decoration: none;
+            color: #0073e6;
+            padding: 10px 15px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        /* Show dropdown when hovering */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Dropdown animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+   <header style="background: url('images/gallery19.2.jpeg') no-repeat center center/cover; height: 35vh;">
+    <div class="header-content">
+        <h1> WELCOME TO DANIAL PERSONAL WEBSITE! </h1>
+    </div>
+</header>
+    <nav>
+        <div class="dropdown">
+            <button class="menu-button">&#9776; Menu</button>
+            <div class="dropdown-content">
+                <a href="biodata.html">Biodata</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <marquee behavior="scroll" direction="right" scrollamount="6">
+           ﷽
+        </marquee>
+        <h2>About Me</h2>
+        <div class="about-project">
+            <img src="images/denn6.jpg" alt="Gallery Image 1">
+            <div class="image-caption">This is me,just a chill guy born at History City now currently stayed at Heritage City tryna be a better version of me.Im 20 years old, now struggling finishing my last semester of my Diploma.Hope you enjoy exploring my personal website! </p> Want to hear something? "CLICK HERE"
+ </div>
+        </div>
+<audio id="background-audio" autoplay loop muted>
+    <source src="audio/anginkencang.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<script>
+    // Unmute audio after user interaction (click)
+    document.body.addEventListener('click', function() {
+        const audio = document.getElementById('background-audio');
+        audio.muted = false;
+        audio.play();
+    });
+</script>
+
+    
+    <footer>
+        <p>&copy; 2024 Akhmal Danial | <a href="index.html">Home</a> | <a href="contact.html">Contact Me</a></p>
+    </footer>
+</body>
+</html>
